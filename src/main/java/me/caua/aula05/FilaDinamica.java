@@ -1,9 +1,9 @@
 package me.caua.aula05;
 
-public class FilaDinamica {
+public class FilaDinamica<T> {
 
-    private No primeiro;
-    private No ultimo;
+    private No<T> primeiro;
+    private No<T> ultimo;
 
     public FilaDinamica() {
         this.primeiro = null;
@@ -14,27 +14,39 @@ public class FilaDinamica {
         return primeiro == null;
     }
 
-    public void push(int valor) {
-        No noAux = new No(valor);
+    public void push(T valor) {
+        No<T> noAux = new No<>(valor);
 
         if (isEmpty()) {
             this.primeiro = noAux;
             this.ultimo = noAux;
-            return;
         } else {
             ultimo.setProximo(noAux);
             ultimo = noAux;
         }
     }
 
-    public Integer pop() {
+    public int size() {
+        int count = 0;
+
+        No<T> atual = primeiro;
+
+        while (atual != null) {
+            count++;
+            atual = atual.getProximo();
+        }
+
+        return count;
+    }
+
+    public T pop() {
 
         if (isEmpty()) {
             System.out.println("A fila já está vazia.");
             return null;
         }
 
-        int valor = primeiro.getElemento();
+        T valor = primeiro.getElemento();
         primeiro = primeiro.getProximo();
 
         if (primeiro == null) {
@@ -45,14 +57,12 @@ public class FilaDinamica {
     }
 
     public void imprimir() {
-        No atual = primeiro;
+        No<T> atual = primeiro;
 
         while (atual != null) {
-            System.out.print(atual.getElemento() + " ");
+            System.out.println(atual.getElemento());
             atual = atual.getProximo();
         }
-
-        System.out.println();
     }
 
 }

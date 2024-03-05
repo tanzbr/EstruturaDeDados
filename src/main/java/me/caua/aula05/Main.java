@@ -3,53 +3,51 @@ package me.caua.aula05;
 public class Main {
 
     public static void main(String[] args) {
+        testarPilha();
+        testarFila();
+    }
 
-        FilaDinamica fila = new FilaDinamica();
+    public static void testarFila() {
+        System.out.println("---- Testando fila");
+        FilaDinamica<Float> f = new FilaDinamica<>();
 
-        fila.push(20);
-        fila.push(30);
-        fila.push(40);
+        f.push(1F);
+        f.push(2F);
+        f.push(3F);
+        f.imprimir();
+        System.out.println("Tamanho: " + f.size());
+        System.out.println("-------");
+        System.out.println("Removendo item " + f.pop());
+        System.out.println("Removendo item " + f.pop());
+        f.imprimir();
 
-        fila.push(50);
-        fila.push(60);
-        fila.imprimir();
-        System.out.println("---");
+        f.pop();
+        f.pop();
+        f.imprimir();
 
-        fila.pop();
-        fila.pop();
-        fila.imprimir();
-
-        fila.pop();
-        fila.pop();
-        System.out.println("---");
-        fila.imprimir();
-        fila.pop();
-
-        System.out.println("---");
-        fila.pop();
-//        PilhaDinamica pilha = new PilhaDinamica();
-//
-//        pilha.push(20);
-//        pilha.push(30);
-//        pilha.push(40);
-//        pilha.push(40);
-//        pilha.imprimir();
-//
-//        pilha.pop();
-//        pilha.pop();
-//        pilha.pop();
-//        pilha.imprimir();
-//
-//        pilha.pop();
-//        pilha.pop();
-//        pilha.pop();
-//        pilha.pop();
-//        pilha.imprimir();
+        f.push(10F);
+        f.imprimir();
     }
 
     public static void testarPilha() {
-
+        System.out.println("---- Testando pilha");
         PilhaDinamica<String> p = new PilhaDinamica<>();
+
+        p.push("Teste 1");
+        p.push("Teste 2");
+        p.push("Teste 3");
+        System.out.println("Tamanho: " + p.size());
+        System.out.println("-------");
+        p.imprimir();
+        p.push("Teste 4");
+        p.pop();
+        p.pop();
+        p.pop();
+        System.out.println("-------");
+        p.imprimir();
+        p.pop();
+
+        p.pop();
 
     }
 

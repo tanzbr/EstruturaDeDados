@@ -32,11 +32,11 @@ public class PilhaDinamica<T> {
     public int size() {
         int count = 0;
 
-        No atual = topo;
+        No<T> atual = topo;
 
-        while (topo != null) {
+        while (atual != null) {
             count++;
-            topo = topo.getProximo();
+            atual = atual.getProximo();
         }
 
         return count;
