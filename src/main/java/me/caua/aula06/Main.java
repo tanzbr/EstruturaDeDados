@@ -3,7 +3,7 @@ package me.caua.aula06;
 public class Main {
 
     public static void main(String[] args) {
-        ListaDinamicaOrdenada l = new ListaDinamicaOrdenada();
+        ListaOrdenada l = new ListaOrdenada();
 
         System.out.println("Adicionando valores");
         l.add(10);

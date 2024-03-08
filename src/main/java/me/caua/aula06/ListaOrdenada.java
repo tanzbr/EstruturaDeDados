@@ -1,11 +1,11 @@
 package me.caua.aula06;
 
-public class ListaDinamicaOrdenada {
+public class ListaOrdenada {
 
     private No<Integer> primeiro;
     private No<Integer> ultimo;
 
-    public ListaDinamicaOrdenada() {
+    public ListaOrdenada() {
         this.primeiro = null;
         this.ultimo = null;
     }
