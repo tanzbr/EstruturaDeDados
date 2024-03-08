@@ -1,4 +1,6 @@
-package me.caua.aula06;
+package me.caua.arquivados;
+
+import me.caua.aula06.No;
 
 public class ListaDinamica<T> {
 
