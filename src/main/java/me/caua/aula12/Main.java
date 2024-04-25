@@ -15,9 +15,12 @@ public class Main {
         ab.inserirNo(null, 7);
         ab.inserirNo(null, 6);
 
-//        ab.buscaPreOrdem(ab.getRaiz(), 10);
-//        System.out.println(ab.buscaEmOrdem(ab.getRaiz(), 6));
-        System.out.println(ab.buscaPosOrdem(ab.getRaiz(), 9));
+        System.out.println("----- pré ordem -------");
+        ab.buscaPreOrdem(ab.getRaiz(), 10);
+        System.out.println("----- em ordem -------");
+        ab.buscaEmOrdem(ab.getRaiz(), 6);
+        System.out.println("----- pós ordem -------");
+        ab.buscaPosOrdem(ab.getRaiz(), 9);
     }
 
 }

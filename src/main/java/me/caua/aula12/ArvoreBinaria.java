@@ -36,8 +36,7 @@ public class ArvoreBinaria {
     public Integer buscaPreOrdem(No noAtual, int elementoBuscado) {
         if (noAtual == null) return null;
 
-        // sysout para testar
-        System.out.println(noAtual);
+        System.out.println(noAtual.getElemento());
 
         if (noAtual.getElemento() == elementoBuscado) {
             return noAtual.getElemento(); // retornar o elementro encontrado
@@ -65,7 +64,7 @@ public class ArvoreBinaria {
             return noEsquerdo;
         }
 
-        System.out.println(noAtual);
+        System.out.println(noAtual.getElemento());
 
         if (noAtual.getElemento() == elementoBuscado) {
             return noAtual.getElemento();
