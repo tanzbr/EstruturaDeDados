@@ -1,4 +1,4 @@
-package me.caua.arvorebinaria;
+package me.caua.aula12;
 
 public class No {
 
@@ -34,5 +34,14 @@ public class No {
 
     public void setDireito(No direito) {
         this.direito = direito;
+    }
+
+    @Override
+    public String toString() {
+        return "No{" +
+                "elemento=" + elemento +
+                ", esquerdo=" + esquerdo +
+                ", direito=" + direito +
+                '}';
     }
 }
