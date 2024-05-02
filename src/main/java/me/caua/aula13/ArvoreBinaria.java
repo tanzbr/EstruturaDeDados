@@ -144,6 +144,34 @@ public class ArvoreBinaria {
         return raiz; // Retorna a raiz atualizada
     }
 
+    public Integer getAltura(No raiz) {
+        int esquerdo = 0;
+        int direito = 0;
+
+        if (hasNoEsquerdo(raiz)) {
+            esquerdo+= getAltura(raiz.getEsquerdo())+1;
+        }
+        if (hasNoDireito(raiz)) {
+            direito+= getAltura(raiz.getDireito())+1;
+        }
+
+        if (esquerdo > direito) {
+            return esquerdo;
+        } else if (direito > esquerdo) {
+            return direito;
+        } else {
+            return direito;
+        }
+    }
+
+    private boolean hasNoEsquerdo(No atual) {
+        return atual.getEsquerdo() != null;
+    }
+
+    private boolean hasNoDireito(No atual) {
+        return atual.getDireito() != null;
+    }
+
     public No getRaiz() {
         return noRaiz;
     }
