@@ -144,14 +144,67 @@ public class ArvoreBinaria {
         return raiz; // Retorna a raiz atualizada
     }
 
-    private int getAltura(No raiz) {
+    public Integer getAltura(No raiz) {
+        int esquerdo = 0;
+        int direito = 0;
+
+        if (hasNoEsquerdo(raiz)) {
+            esquerdo+= getAltura(raiz.getEsquerdo())+1;
+        }
+        if (hasNoDireito(raiz)) {
+            direito+= getAltura(raiz.getDireito())+1;
+        }
+
+        if (esquerdo > direito) {
+            return esquerdo;
+        } else if (direito > esquerdo) {
+            return direito;
+        } else {
+            return direito;
+        }
+    }
+
+    public boolean isArvoreEstrita(No raiz) {
+        if (raiz == null)
+            return true;
+
+        if (raiz.getEsquerdo() == null && raiz.getDireito() == null)
+            return true;
+
+        if (raiz.getEsquerdo() != null && raiz.getDireito() != null)
+            return isArvoreEstrita(raiz.getEsquerdo()) && isArvoreEstrita(raiz.getDireito());
+
+        return false;
+    }
+
+    public boolean isArvoreCompleta(No raiz, int index, int controle) {
+        if (raiz == null)
+            return true;
+
+        if (index >= controle)
+            return false;
+
+        return (isArvoreCompleta(raiz.getEsquerdo(), 2 * index + 1, controle) &&
+                isArvoreCompleta(raiz.getDireito(), 2 * index + 2, controle));
+    }
+
+    public boolean isArvoreCheia(No raiz) {
+        if (raiz == null)
+            return true;
+
+        if (raiz.getEsquerdo() == null && raiz.getDireito() == null)
+            return true;
+
+        if (raiz.getEsquerdo() != null && raiz.getDireito() != null)
+            return (isArvoreCheia(raiz.getEsquerdo()) && isArvoreCheia(raiz.getDireito()));
+
+        return false;
+    }
+
+    public int contarNos(No raiz) {
         if (raiz == null)
             return 0;
-
-        int alturaEsquerda = getAltura(raiz.getEsquerdo());
-        int alturaDireita = getAltura(raiz.getDireito());
-
-        return Math.max(alturaEsquerda, alturaDireita) + 1;
+        return 1 + contarNos(raiz.getEsquerdo()) + contarNos(raiz.getDireito());
     }
 
     private boolean hasNoEsquerdo(No atual) {

@@ -23,6 +23,9 @@ public class Main {
 
         System.out.println(ab.getAltura(ab.getRaiz())); // resultado esperado: 4
 
+        System.out.println("É árvore cheia? " + ab.isArvoreCheia(ab.getRaiz()));
+        System.out.println("É árvore estrita? " + ab.isArvoreEstrita(ab.getRaiz()));
+        System.out.println("É árvore completa? " + ab.isArvoreCompleta(ab.getRaiz(), 0, ab.contarNos(ab.getRaiz())));
 //        ab.inserirNo(null, 5);
 //        ab.inserirNo(null, 3);
 //        ab.inserirNo(null, 4);
